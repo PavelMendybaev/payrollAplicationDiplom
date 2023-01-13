@@ -25,6 +25,22 @@ namespace payroll_application.windows
 
         }
 
+        private void exitAppEnter(object sender, MouseEventArgs e)
+        {
+            if (sender is Image img) {
+                img.Width += 5;
+                img.Width += 5;
+            }
+        }
+        private void exitAppExit(object sender, MouseEventArgs e)
+        {
+            if (sender is Image img)
+            {
+                img.Width -= 5;
+                img.Width -= 5;
+            }
+        }
+
         private void exitApp(object sender,MouseButtonEventArgs e) {
             Application.Current.Shutdown();
         }

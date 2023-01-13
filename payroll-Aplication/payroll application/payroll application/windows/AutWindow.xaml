@@ -1,4 +1,5 @@
 ﻿<Window x:Class="payroll_application.windows.autWindow"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,21 +7,46 @@
         xmlns:local="clr-namespace:payroll_application.windows"
         mc:Ignorable="d" ResizeMode="NoResize"
         Title="autWindow" Height="450" Width="400" WindowStyle="None">
-    <Grid x:Name="myGrid" MouseDown="dragClick">
+    <Grid Background="#FF010D17" x:Name="myGrid" MouseDown="dragClick">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="12*"/>
+            <RowDefinition/>
+            <RowDefinition Height="415.385"/>
         </Grid.RowDefinitions>
 
-        <Grid>
-            <Image MouseLeftButtonDown="exitApp" Source="/image/close.png" Width="20" HorizontalAlignment="Right" Margin="0,0,20,0" />
-        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1,0,1,1" Margin="155,-30,-36,268" Background="#FF37826D" CornerRadius="150,150,150,150" Grid.RowSpan="2" Grid.Column="1"/>
 
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
-                <GradientStop Color="#CC01B6E9" Offset="0.003"/>
-                <GradientStop Color="#FF644BF7" Offset="0.83"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+
+
+        <Grid Grid.ColumnSpan="2" Margin="0,0,0,415" Grid.RowSpan="2">
+            <Image MouseLeave="exitAppExit" MouseEnter="exitAppEnter" MouseLeftButtonDown="exitApp" HorizontalAlignment="Center" Source="/image/close.png" Width="20"  Margin="370,2,10,-3" />
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1,0,1,1" Margin="214,288,-36,-27" Background="#FF80E19F" CornerRadius="100,100,100,100" Grid.Row="1" Grid.Column="1"/>
+        <Border BorderBrush="Black" BorderThickness="1,0,1,1" Margin="30,207,284,129" Background="#663A6160" CornerRadius="100,100,100,100" Grid.ColumnSpan="2" Grid.Row="1" Opacity="1"/>
+
+        <TextBox TextAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="23,117,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243" Background="White" CaretBrush="#FF37826D" SelectionBrush="#FF80E19F" Foreground="#FF010D17" Height="30">
+            <TextBox.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="White" Background="White">
+                        <ScrollViewer Margin="0" x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"  TextAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="23,185,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Background="White" CaretBrush="#FF37826D" SelectionBrush="#FF80E19F" Foreground="#FF010D17" BorderBrush="#90E24F4F" Height="29">
+            <TextBox.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="White" Background="White">
+                        <ScrollViewer Margin="0" x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <Label FontSize="15" HorizontalContentAlignment="Center" Grid.Column="1" Content="Логин" HorizontalAlignment="Left" Margin="23,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="243" Foreground="#DDFFFFFF" Height="26"/>
+        <Label FontSize="15" HorizontalContentAlignment="Center" Grid.Column="1" Content="Пароль" HorizontalAlignment="Left" Margin="23,159,0,0" Grid.Row="1" VerticalAlignment="Top" Width="243" Foreground="#DDFFFFFF" Height="26"/>
     </Grid>
 </Window>
