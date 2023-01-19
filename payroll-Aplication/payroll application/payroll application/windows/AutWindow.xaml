@@ -48,5 +48,17 @@
         </TextBox>
         <Label FontSize="15" HorizontalContentAlignment="Center" Grid.Column="1" Content="Логин" HorizontalAlignment="Left" Margin="23,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="243" Foreground="#DDFFFFFF" Height="26"/>
         <Label FontSize="15" HorizontalContentAlignment="Center" Grid.Column="1" Content="Пароль" HorizontalAlignment="Left" Margin="23,159,0,0" Grid.Row="1" VerticalAlignment="Top" Width="243" Foreground="#DDFFFFFF" Height="26"/>
+        <Button  Grid.Column="1" Content="Вход" HorizontalAlignment="Left" Margin="23,246,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="243" Background="White" Foreground="#DD000000" BorderBrush="Black">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        
+        
+
     </Grid>
+    
 </Window>
